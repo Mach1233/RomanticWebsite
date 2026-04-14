@@ -12,51 +12,48 @@ export default function LoveMessage({ isVisible }: LoveMessageProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
 
-  const messageLines = [
-    "Houda,",
-    "",
-    "Ena nektibe wa naamil fi hal haja hethi kan ala haja wa7eda.",
-    "Enou wayeeekk omournaa moknaa haja aadyaa 3ishnaa maa baaethnaa bershaa hajite semahhaaaaa w yasser semhaaa",
-    "Bershaa Hajite behya eli ana tw metfkirhaa w manjimtesh nanshaa wala hata haja fiha khater.",
-    "Enti toflaa w ensana semhaa w tayebaa alff min yetmanikk chofte mink bershaa hajite behyaaa oumrri manjim nansahaa kolyoum netfkirhaa w kol hajite semhaa maak",
-    "ENti testahilll kolchy semahh fi denya yaatik rabi ala 9ide 9albik khater galbik kbir kol mano93ede netfakir nahre eli thay3te fih talifouni w 9aa3edna nfetchou fi kol blassa w e7na dourou fi blayess oumri",
-    "oumri wala bil omar tkhayelte eli nemchilhoum houwa ana konte nkhaff la nejbide flouss fi soussa eni walite a un point dour fi zne9i w eli ana aanmoute bel7a9 haja wa7ida eli msabretnii enikk konti maaya w ghdawa taadi algebre",
-    "wenti mkish m7thra hata chwy barka ana mn7ibesh nesmah rouhhy kifesh hazitek fi khtar ama netfaker kifesh kontii khirr min ay rajel aareftouu houwa aymen maguelish hata bil kethibe nji maak",
-    "ana no93ede nefakir fi hajite hethi kol ana 9a3ede akther min 50 youm fi soussa periode s3iba ama eli khafef fi hak labled aymet semhaaa eli 3ishnahaa kol blassa net3daa minhaaa netfkir la7thete semhaaa",
-    "Houdaa denyaaa hethiii a9sser w metsthalish bech yakhserrr wa7edaa kifik w naarefff eli thlamtekk bershaa w naaareffff el hajaate eli 7assetti s3ibaaa bershaaa mnishh mnjim nenssaa e7sess w hajite eli 7asseti biha",
-    "5ater omerikk mkontii toflaa kima ay toflaa naareff kifeshh entii t7ebii 3abed t7ebouu ib kol 9albikk",
-    "eli goltou maandou mayzide wala ina9ess fi wa9a3 ama eli ihemni ana ghalite bershaa fi 7a9ik w ana kolyoum net3atheb fi ha haja 5ater bel7a9 ana mnjimtesh naadiha haja hethii naarefff eli heyaa s3iba bersha ama eli sar sar",
-    "ena nehkii hetha kol bech ngolik eli ana ghalite fi 7a9 ensana semhaaa w tayebbaa hethaa omryy mani nesma7 rou7yyy ama 7abite notlibe menkk semahhh wlh ala kol haja khayebaa w 5astan mach3err 5aybaaa",
-    "5ater naareff guideshh tedemirr 3abde w ana notlibe menikk semaahh ala kol haja kahyebaa w ala ekher mara",
-    "houda denyaa hethii 9essira bershaa w ghadraaa w ana mnjimmsh nesma7 rouhhy ala kol haja tharetikk fiha",
-    "",
-    "What I truly want...",
-    "I know I might be too late, but I am truly sorry... and even if it is, I could not stay silent.",
-    "I respect you too much to pressure you",
-    "Because you are someone worth knowing,",
-    "worth caring about,",
-    "worth having in my life",
-    "in whatever way feels right for you.",
-    "",
-    "No expectations.",
-    "No pressure.",
-    "Just genuine care and respect.",
-    "",
-    "Take your time.",
-    "",
-    "With sincerity,",
-    "Someone who truly cares"
-  ];
+  const messageText = `Houda,
+
+Ena nektibe wa naamil fi hal haja hethi kan ala haja wa7eda.
+Enou wayeeekk omournaa moknaa haja aadyaa 3ishnaa maa baaethnaa bershaa hajite semahhaaaaa w yasser semhaaa
+Bershaa Hajite behya eli ana tw metfkirhaa w manjimtesh nanshaa wala hata haja fiha khater.
+Enti toflaa w ensana semhaa w tayebaa alff min yetmanikk chofte mink bershaa hajite behyaaa oumrri manjim nansahaa kolyoum netfkirhaa w kol hajite semhaa maak
+ENti testahilll kolchy semahh fi denya yaatik rabi ala 9ide 9albik khater galbik kbir kol mano93ede netfakir nahre eli thay3te fih talifouni w 9aa3edna nfetchou fi kol blassa w e7na dourou fi blayess oumri
+oumri wala bil omar tkhayelte eli nemchilhoum houwa ana konte nkhaff la nejbide flouss fi soussa eni walite a un point dour fi zne9i w eli ana aanmoute bel7a9 haja wa7ida eli msabretnii enikk konti maaya w ghdawa taadi algebre
+wenti mkish m7thra hata chwy barka ana mn7ibesh nesmah rouhhy kifesh hazitek fi khtar ama netfaker kifesh kontii khirr min ay rajel aareftouu houwa aymen maguelish hata bil kethibe nji maak
+ana no93ede nefakir fi hajite hethi kol ana 9a3ede akther min 50 youm fi soussa periode s3iba ama eli khafef fi hak labled aymet semhaaa eli 3ishnahaa kol blassa net3daa minhaaa netfkir la7thete semhaaa
+Houdaa denyaaa hethiii a9sser w metsthalish bech yakhserrr wa7edaa kifik w naarefff eli thlamtekk bershaa w naaareffff el hajaate eli 7assetti s3ibaaa bershaaa mnishh mnjim nenssaa e7sess w hajite eli 7asseti biha
+5ater omerikk mkontii toflaa kima ay toflaa naareff kifeshh entii t7ebii 3abed t7ebouu ib kol 9albikk
+eli goltou maandou mayzide wala ina9ess fi wa9a3 ama eli ihemni ana ghalite bershaa fi 7a9ik w ana kolyoum net3atheb fi ha haja 5ater bel7a9 ana mnjimtesh naadiha haja hethii naarefff eli heyaa s3iba bersha ama eli sar sar
+ena nehkii hetha kol bech ngolik eli ana ghalite fi 7a9 ensana semhaaa w tayebbaa hethaa omryy mani nesma7 rou7yyy ama 7abite notlibe menkk semahhh wlh ala kol haja khayebaa w 5astan mach3err 5aybaaa
+5ater naareff guideshh tedemirr 3abde w ana notlibe menikk semaahh ala kol haja kahyebaa w ala ekher mara
+houda denyaa hethii 9essira bershaa w ghadraaa w ana mnjimmsh nesma7 rouhhy ala kol haja tharetikk fiha
+
+What I truly want...
+I know I might be too late, but I am truly sorry... and even if it is, I could not stay silent.
+I respect you too much to pressure you
+Because you are someone worth knowing,
+worth caring about,
+worth having in my life
+in whatever way feels right for you.
+
+No expectations.
+No pressure.
+Just genuine care and respect.
+
+Take your time.
+
+With sincerity,
+Someone who truly cares`;
 
   useEffect(() => {
     if (!isVisible) return;
 
-    const fullText = messageLines.join('\n');
     let index = 0;
 
     const typeInterval = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayedText(fullText.slice(0, index + 1));
+      if (index < messageText.length) {
+        setDisplayedText(messageText.slice(0, index + 1));
         index++;
       } else {
         clearInterval(typeInterval);
