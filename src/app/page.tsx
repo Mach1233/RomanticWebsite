@@ -96,11 +96,11 @@ export default function Home() {
           {/* Memory Gallery */}
           <MemoryGallery />
 
-          {/* Secret Message */}
-          <SecretMessage />
+         {/* Secret Message */}
+{/* <SecretMessage /> */}
 
-          {/* Forgiveness & Friendship Section */}
-          <ForgivenessSection />
+{/* Forgiveness & Friendship Section */}
+{/* <ForgivenessSection /> */}
 
           {/* Footer */}
           <Footer />
