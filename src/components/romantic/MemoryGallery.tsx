@@ -59,7 +59,7 @@ export default function MemoryGallery() {
     enter: (direction: number) => ({
       x: direction > 0 ? 500 : -500,
       opacity: 0,
-      scale: 0.9
+      scale: 0.95
     }),
     center: {
       zIndex: 1,
@@ -71,7 +71,7 @@ export default function MemoryGallery() {
       zIndex: 0,
       x: direction < 0 ? 500 : -500,
       opacity: 0,
-      scale: 0.9
+      scale: 0.95
     })
   };
 
@@ -118,79 +118,74 @@ export default function MemoryGallery() {
           </p>
         </motion.div>
 
-        {/* Gallery Card */}
+        {/* Gallery Card - Flexible frame */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="relative"
         >
-          {/* Main container with flexible frame */}
-          <div className="relative rounded-3xl overflow-hidden glassmorphism p-3 md:p-4">
-            {/* Inner frame with border */}
-            <div className="relative rounded-2xl overflow-hidden bg-black/20 border border-pink-500/20">
-              {/* Aspect ratio container - flexible */}
-              <div className="relative w-full aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9]">
-                <AnimatePresence initial={false} custom={direction} mode="wait">
-                  <motion.div
-                    key={currentIndex}
-                    custom={direction}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.3 },
-                      scale: { duration: 0.3 }
-                    }}
-                    className="absolute inset-0"
-                  >
-                    {/* Loading skeleton */}
-                    {!imageLoaded && (
-                      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 animate-pulse flex items-center justify-center">
-                        <div className="w-16 h-16 border-4 border-pink-400/30 border-t-pink-400 rounded-full animate-spin" />
-                      </div>
-                    )}
+          {/* Main container */}
+          <div className="relative rounded-3xl overflow-hidden glassmorphism p-2 md:p-3">
+            {/* Inner frame */}
+            <div className="relative rounded-2xl overflow-hidden bg-black/30 border border-pink-500/20">
+              
+              {/* Loading skeleton */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 animate-pulse flex items-center justify-center z-10">
+                  <div className="w-12 h-12 border-4 border-pink-400/30 border-t-pink-400 rounded-full animate-spin" />
+                </div>
+              )}
 
-                    {/* Image - flexible sizing */}
-                    <img
-                      src={currentMemory.imageUrl}
-                      alt={currentMemory.title}
-                      onLoad={() => setImageLoaded(true)}
-                      className={`w-full h-full object-contain md:object-cover transition-opacity duration-500 ${
-                        imageLoaded ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    />
-
-                    {/* Gradient overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 pointer-events-none" />
-                    
-                    {/* Corner decorations */}
-                    <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-pink-400/50 rounded-tl-lg" />
-                    <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-pink-400/50 rounded-tr-lg" />
-                    <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-pink-400/50 rounded-bl-lg" />
-                    <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-pink-400/50 rounded-br-lg" />
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Navigation buttons - inside frame */}
-                <button
-                  onClick={() => paginate(-1)}
-                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full glassmorphism flex items-center justify-center text-white hover:bg-white/20 transition-colors border border-pink-500/30"
-                  aria-label="Previous image"
+              <AnimatePresence initial={false} custom={direction} mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.3 }
+                  }}
+                  className="relative flex items-center justify-center"
                 >
-                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
-                
-                <button
-                  onClick={() => paginate(1)}
-                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full glassmorphism flex items-center justify-center text-white hover:bg-white/20 transition-colors border border-pink-500/30"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
-              </div>
+                  {/* Image - ALWAYS CONTAIN (full image visible) */}
+                  <img
+                    src={currentMemory.imageUrl}
+                    alt={currentMemory.title}
+                    onLoad={() => setImageLoaded(true)}
+                    className={`w-full h-auto max-h-[70vh] object-contain transition-opacity duration-500 ${
+                      imageLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Corner decorations */}
+              <div className="absolute top-2 left-2 w-6 h-6 border-l-2 border-t-2 border-pink-400/40 rounded-tl-lg pointer-events-none" />
+              <div className="absolute top-2 right-2 w-6 h-6 border-r-2 border-t-2 border-pink-400/40 rounded-tr-lg pointer-events-none" />
+              <div className="absolute bottom-2 left-2 w-6 h-6 border-l-2 border-b-2 border-pink-400/40 rounded-bl-lg pointer-events-none" />
+              <div className="absolute bottom-2 right-2 w-6 h-6 border-r-2 border-b-2 border-pink-400/40 rounded-br-lg pointer-events-none" />
+
+              {/* Navigation buttons */}
+              <button
+                onClick={() => paginate(-1)}
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full glassmorphism flex items-center justify-center text-white hover:bg-white/20 transition-colors border border-pink-500/30"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
+              
+              <button
+                onClick={() => paginate(1)}
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full glassmorphism flex items-center justify-center text-white hover:bg-white/20 transition-colors border border-pink-500/30"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
             </div>
           </div>
 
