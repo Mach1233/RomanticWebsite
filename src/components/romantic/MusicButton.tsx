@@ -12,7 +12,7 @@ export default function MusicButton() {
   useEffect(() => {
     // Create audio element with a romantic royalty-free music URL
     // Using a placeholder - in production, you'd use your own hosted audio file
-    audioRef.current = new Audio('/romantic-music.mp3');
+    audioRef.current = new Audio('/song-website.mp3');
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 
