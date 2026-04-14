@@ -15,46 +15,40 @@ interface Memory {
 const memories: Memory[] = [
   {
     id: 1,
-    title: "Our First Meeting",
-    caption: "The day my world changed forever. When our eyes met, I knew my heart had found its home.",
+    title: "Best Place",
+    caption: "Time stood still as we shared our first adventure together. Every moment was perfect.",
     gradient: "from-pink-500 to-rose-600",
-    imageUrl: "/images/memory1.jpg" // 👈 replace with your image
+    imageUrl: "/images/photo1.jpg" // 👈 replace with your image
   },
   {
     id: 2,
-    title: "First Date Magic",
-    caption: "Time stood still as we shared our first adventure together. Every moment was perfect.",
+    title: " Date Magic",
+    caption: "Best isolation",
     gradient: "from-purple-500 to-pink-600",
-    imageUrl: "/images/memory2.jpg"
+    imageUrl: "/images/image2.jpg"
   },
   {
     id: 3,
-    title: "Our Adventures",
+    title: "Best Time Ever",
     caption: "Every journey with you is a treasure. Together, we create memories that last a lifetime.",
     gradient: "from-rose-500 to-purple-600",
-    imageUrl: "/images/memory3.jpg"
+    imageUrl: "/images/photo3.jpg"
   },
   {
     id: 4,
     title: "Quiet Moments",
     caption: "In your arms, I find peace. The sweetest moments are the ones we share in silence.",
     gradient: "from-pink-600 to-purple-500",
-    imageUrl: "/images/memory4.jpg"
+    imageUrl: "/images/photo4.jpg"
   },
   {
     id: 5,
-    title: "Celebrations",
+    title: "First Time",
     caption: "Every celebration is brighter with you by my side. You make ordinary moments extraordinary.",
     gradient: "from-purple-600 to-rose-500",
-    imageUrl: "/images/memory5.jpg"
+    imageUrl: "/images/image5.jpg"
   },
-  {
-    id: 6,
-    title: "Forever Us",
-    caption: "Every day with you is a gift. Looking forward to a lifetime of memories together.",
-    gradient: "from-rose-600 to-pink-500",
-    imageUrl: "/images/memory6.jpg"
-  }
+ 
 ];
 
 export default function MemoryGallery() {
