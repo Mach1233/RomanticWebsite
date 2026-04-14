@@ -25,7 +25,7 @@ export default function LoveMessage({ isVisible }: LoveMessageProps) {
     "ana no93ede nefakir fi hajite hethi kol ana 9a3ede akther min 50 youm fi soussa periode s3iba ama eli khafef fi hak labled aymet semhaaa eli 3ishnahaa kol blassa net3daa minhaaa netfkir la7thete semhaaa  ",
     "Houdaa denyaaa hethiii a9sser w metsthalish bech yakhserrr wa7edaa kifik w naarefff eli thlamtekk bershaa w naaareffff  el hajaate eli 7assetti s3ibaaa bershaaa mnishh mnjim nenssaa e7sess w hajite eli 7asseti biha  ",
     "5ater omerikk mkontii toflaa kima ay toflaa naareff kifeshh entii t7ebii 3abed t7ebouu ib kol 9albikk ",
-    "eli goltou maandou mayzide wala ina9ess fi wa9a3 ama eli ihemni ana ghalite bershaa fi 7a9ik w ana kolyoum net3atheb fi ha haja 5ater bel7a9 ana mnjimtesh naadiha haja hethii naarefff eli heyaa s3iba bersha ama eli sar sar "
+    "eli goltou maandou mayzide wala ina9ess fi wa9a3 ama eli ihemni ana ghalite bershaa fi 7a9ik w ana kolyoum net3atheb fi ha haja 5ater bel7a9 ana mnjimtesh naadiha haja hethii naarefff eli heyaa s3iba bersha ama eli sar sar ",
     "ena nehkii hetha kol bech ngolik eli ana ghalite fi 7a9 ensana semhaaa w tayebbaa hethaa omryy mani nesma7 rou7yyy ama 7abite notlibe menkk semahhh wlh ala kol haja khayebaa w 5astan mach3err 5aybaaa",
     "5ater naareff guideshh tedemirr 3abde w ana notlibe menikk semaahh ala kol haja kahyebaa w ala ekher mara ",
     "houda denyaa hethii 9essira bershaa w ghadraaa w ana mnjimmsh nesma7 rouhhy ala kol haja tharetikk fiha  ",
