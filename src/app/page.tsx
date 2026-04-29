@@ -84,14 +84,16 @@ export default function Home() {
         >
           {/* Logout Button */}
           <LogoutButton />
+          
 
           {/* Hero Section */}
           <HeroSection />
 
+          <RestaurantInvitation/>
           {/* Love Message Section */}
-          <div id="love-message">
+         {/* <div id="love-message">
             <LoveMessage isVisible={loveMessageVisible} />
-          </div>
+          </div>*/}
 
           {/* Memory Gallery */}
           <MemoryGallery />
