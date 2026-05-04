@@ -273,7 +273,7 @@ export default function RestaurantInvitation() {
                         {/* Location */}
                         <div className="flex items-center justify-center gap-2.5">
                           <MapPin className="w-4 h-4 text-rose-400/60 flex-shrink-0" />
-                          <span className="text-rose-100/80 text-lg tracking-wide">Sousse, Tunisia</span>
+                          <span className="text-rose-100/80 text-lg tracking-wide">Marsa, Tunisia</span>
                         </div>
 
                         {/* Divider */}
