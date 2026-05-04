@@ -491,7 +491,7 @@ export default function RestaurantInvitation() {
                     <div className="space-y-3">
                       <div className="flex items-center justify-center gap-2.5 text-rose-200/70">
                         <MapPin className="w-4 h-4 text-rose-400/60" />
-                        <span>Sousse, Tunisia</span>
+                        <span>Marsa, Tunisia</span>
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <div className="h-px w-6 bg-rose-400/15" />
